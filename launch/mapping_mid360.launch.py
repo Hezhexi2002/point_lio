@@ -59,10 +59,10 @@ def generate_launch_description():
     ld = LaunchDescription([
         rviz_arg,
         laser_mapping_node,
-        #GroupAction(
-        #    actions=[rviz_node],
-        #    condition=IfCondition(LaunchConfiguration('rviz'))
-        ),
+        GroupAction(
+           actions=[rviz_node],
+           condition=IfCondition(LaunchConfiguration('rviz'))
+        )
     ])
 
     return ld
